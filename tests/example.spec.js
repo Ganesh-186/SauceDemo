@@ -11,6 +11,6 @@ test('SauceDemo',async({page})=>{
 //added by Basker -- Train module
 test('Train Scenario',async({page})=>{
   const Login = new LoginPage(page);
-  await Login.login(user.user5.name,user.password);
+  await Login.login(user.user1.name,user.password);
   await page.waitForTimeout(4000);
 })
