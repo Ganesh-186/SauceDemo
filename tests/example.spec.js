@@ -1,16 +1,11 @@
-import {test} from '@playwright/test';
-import { LoginPage} from '../pages/Login';
-import user from '../data/user-data.json'
+import { test } from '../hooks/globalHooks';
+import user from '../testdata/userData.json'
 
-test('SauceDemo',async({page})=>{
-  const Login = new LoginPage(page);
-  await Login.login(user.user6.name,user.password);
-  await page.waitForTimeout(4000);
-})
+test('SauceDemo', async ({ loginPage}) => {
 
-//added by Basker -- Train module
-test('Train Scenario',async({page})=>{
-  const Login = new LoginPage(page);
-  await Login.login(user.user1.name,user.password);
-  await page.waitForTimeout(4000);
+  await loginPage.login(
+    user.user6.name,
+    user.password
+  );
+
 })
